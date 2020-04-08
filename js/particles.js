@@ -5,12 +5,14 @@ function particles(){
     */
 
     // check parameters and use defaults as necessary
+    
     checkParams();
 
-    // read css colour variables from root element
-    const particleColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle');
-    const strokeColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke');
-    const strokeHoverColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke-hover');
+    // read css colour variables from root element, set defaults as necessary
+    let particleColour;
+    let strokeColour;
+    let strokeHoverColour;
+    checkColours();
 
     // get canvas element, set context and size
     const canvas = document.getElementById('particles');
@@ -227,6 +229,32 @@ function particles(){
         else{
             hover = true;
             console.log("'hover' must either 'true' or 'false'. Using default of 'true'");
+        }
+    }
+
+    function checkColours(){
+        if (getComputedStyle(document.documentElement).getPropertyValue('--col-particle').length === 0){
+            particleColour = '#000000';
+            console.log("CSS variable '--col-particle' is not set. Using 'black' (#000000).");
+        }
+        else{
+            particleColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle');
+        }
+
+        if (getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke').length === 0){
+            strokeColour = '#000000';
+            console.log("CSS variable '--col-particle-stroke' is not set. Using 'black' (#000000).");
+        }
+        else{
+            strokeColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke');
+        }
+
+        if (hover === true && getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke-hover').length === 0){
+            strokeHoverColour = '#ff0000';
+            console.log("CSS variable '--col-particle-stroke-hover' is not set. Using 'red' (#ff0000).");
+        }
+        else{
+            strokeHoverColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke-hover');
         }
     }
 }
