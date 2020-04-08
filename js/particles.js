@@ -1,6 +1,6 @@
 function particles(){
-    /* create particles animation
-        based on the amazing tutorial by 'Franks Labratory'
+    /* particles animation
+        based on the amazing tutorial by 'Franks Laboratory'
         https://youtu.be/d620nV6bp0A
     */
 
@@ -187,7 +187,7 @@ function particles(){
         }
         else{
             numParticles = 1;
-            console.log("'numParticles' must be a finite number. Using default of '1'");
+            console.log("'numParticles' must be a finite number. Using default of '1'.");
         };
 
         if (typeof sizeMultiplier == 'undefined'){
@@ -198,7 +198,7 @@ function particles(){
         }
         else{
             sizeMultiplier = 3;
-            console.log("'sizeMultiplier' must be a finite number. Using default of '3'");
+            console.log("'sizeMultiplier' must be a finite number. Using default of '3'.");
         };
 
         if (typeof connections == 'undefined'){
@@ -209,7 +209,7 @@ function particles(){
         }
         else{
             connections = true;
-            console.log("'connections' must be either 'true' or 'false'. Using default of 'true'");
+            console.log("'connections' must be either 'true' or 'false'. Using default of 'true'.");
         }
 
         if (typeof connectionDensity == 'undefined'){
@@ -220,7 +220,7 @@ function particles(){
         }
         else{
             connectionDensity = (1 / 15) * 100;
-            console.log("'connectionDensity' must be a finite number greater than 1. Using default of '15'");
+            console.log("'connectionDensity' must be a finite number greater than 1. Using default of '15'.");
         }
 
         if (typeof speed == 'undefined'){
@@ -231,7 +231,7 @@ function particles(){
         }
         else{
             speed = 50;
-            console.log("'speed' must be an integer between 1-1000. Using default of '50'");
+            console.log("'speed' must be an integer between 1-1000. Using default of '50'.");
         };
 
         if (typeof avoidMouse == 'undefined'){
@@ -242,7 +242,7 @@ function particles(){
         }
         else{
             avoidMouse = true;
-            console.log("'avoidMouse' must be either 'true' or 'false'. Using default of 'true'");
+            console.log("'avoidMouse' must be either 'true' or 'false'. Using default of 'true'.");
         }
 
         if (typeof hover == 'undefined'){
@@ -253,7 +253,7 @@ function particles(){
         }
         else{
             hover = true;
-            console.log("'hover' must be either 'true' or 'false'. Using default of 'true'");
+            console.log("'hover' must be either 'true' or 'false'. Using default of 'true'.");
         }
     }
 
