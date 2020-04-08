@@ -17,7 +17,7 @@ function particles(){
         typeof speed !== 'undefined'
         && Number.isFinite(speed)
         && (1 <= speed && speed <= 1000)
-        ) ? (speed / 100) : 0.5;
+        ) ? (speed / 100) : 50;
     avoidMouse = (
         typeof avoidMouse !== 'undefined'
         && typeof avoidMouse === 'boolean'
@@ -39,6 +39,7 @@ function particles(){
     canvas.height = window.innerHeight;
 
     let particlesArray;
+    speed = speed / 100;    // index speed to base 100 = 1
 
     // get mouse position
     let mousePosition ={
