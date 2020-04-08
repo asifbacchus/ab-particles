@@ -5,7 +5,11 @@ function particles(){
     */
 
     // check parameters and use defaults as necessary
-    
+    let numParticles;
+    let sizeMultiplier;
+    let speed;
+    let avoidMouse;
+    let hover;
     checkParams();
 
     // read css colour variables from root element, set defaults as necessary
