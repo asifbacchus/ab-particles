@@ -5,6 +5,12 @@
 
 const canvas = document.getElementById('particles');
 const canvasContext = canvas.getContext('2d');
+
+// read css colour variables from root element
+const particleColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle');
+const strokeColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke');
+const strokeHoverColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke-hover');
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -37,7 +43,7 @@ class Particle{
     draw(){
         canvasContext.beginPath();
         canvasContext.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        canvasContext.fillStyle = '#8c5523';
+        canvasContext.fillStyle = particleColour;
         canvasContext.fill();
     }
     // check particle position, mouse position, move particle and draw it
@@ -107,10 +113,12 @@ function connect(){
                 let dy = mousePosition.y - particlesArray[a].y;
                 let mouseDistance = Math.sqrt((dx * dx) + (dy * dy));
                 if (mouseDistance < 200) {
-                    canvasContext.strokeStyle = `rgba(60, 40, 15, ${opacityValue})`;
+                    canvasContext.globalAlpha = opacityValue;
+                    canvasContext.strokeStyle = strokeHoverColour;
                 }
                 else {
-                    canvasContext.strokeStyle = `rgba(140, 85, 31, ${opacityValue})`;
+                    canvasContext.globalAlpha = opacityValue;
+                    canvasContext.strokeStyle = strokeColour;
                 }
                 canvasContext.lineWidth = 1;
                 canvasContext.beginPath();
