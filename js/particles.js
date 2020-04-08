@@ -114,7 +114,7 @@ function particles(){
         for (let a = 0; a < particlesArray.length; a++){
             for (let b = a; b < particlesArray.length; b++){
                 let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                if (distance < (canvas.width / 10) * (canvas.height / 10)){
+                if (distance < (canvas.width / connectionDensity) * (canvas.height / connectionDensity)){
                     opacityValue = 1 - (distance / 20000);
                     // change colour on 'hover' if hover = true (default)
                     if(hover){
@@ -154,7 +154,9 @@ function particles(){
         for (let i = 0; i < particlesArray.length; i++){
             particlesArray[i].update();
         }
-        connect();
+        if(connections){
+            connect();
+        }
     }
 
     // resize event
@@ -196,6 +198,28 @@ function particles(){
             sizeMultiplier = 3;
             console.log("'sizeMultiplier' must be a finite number. Using default of '3'");
         };
+
+        if (typeof connections == 'undefined'){
+            connections = true;
+        }
+        else if (typeof connections === 'boolean'){
+            connections;
+        }
+        else{
+            connections = true;
+            console.log("'connections' must be either 'true' or 'false'. Using default of 'true'");
+        }
+
+        if (typeof connectionDensity == 'undefined'){
+            connectionDensity = 7;
+        }
+        else if (Number.isFinite(connectionDensity) && connectionDensity > 1){
+            connectionDensity;
+        }
+        else{
+            connectionDensity = 7;
+            console.log("'connectionDensity' must be a finite number greater than 1. Using default of '7'");
+        }
 
         if (typeof speed == 'undefined'){
             speed = 50;
