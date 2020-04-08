@@ -1,4 +1,4 @@
-function particles() {
+function particles(avoidMouse = true) {
     /* create particles animation
         based on the amazing tutorial by 'Franks Labratory'
         https://youtu.be/d620nV6bp0A
@@ -56,26 +56,28 @@ function particles() {
             if (this.y > canvas.height || this.y < 0){
                 this.directionY = -this.directionY;
             }
-            /*
-            // collision detection between mouse and particles
-            let dx = mousePosition.x - this.x;
-            let dy = mousePosition.y - this.y;
-            let distance = Math.sqrt((dx * dx) + (dy * dy));
-            if (distance < mousePosition.radius + this.size){
-                if (mousePosition.x < this.x && this.x < canvas.width - this.size * 10){
-                    this.x += 10;
-                }
-                if (mousePosition.x > this.x && this.x > this.size * 10){
-                    this.x -= 10;
-                }
-                if (mousePosition.y < this.y && this.y < canvas.height - this.size * 10){
-                    this.y += 10;
-                }
-                if (mousePosition.y > this.y && this.y > this.size * 10){
-                    this.y -= 10;
+
+            // avoid the mouse if avoidMouse = true (default)
+            if (avoidMouse){
+                let dx = mousePosition.x - this.x;
+                let dy = mousePosition.y - this.y;
+                let distance = Math.sqrt((dx * dx) + (dy * dy));
+                if (distance < mousePosition.radius + this.size){
+                    if (mousePosition.x < this.x && this.x < canvas.width - this.size * 10){
+                        this.x += 10;
+                    }
+                    if (mousePosition.x > this.x && this.x > this.size * 10){
+                        this.x -= 10;
+                    }
+                    if (mousePosition.y < this.y && this.y < canvas.height - this.size * 10){
+                        this.y += 10;
+                    }
+                    if (mousePosition.y > this.y && this.y > this.size * 10){
+                        this.y -= 10;
+                    }
                 }
             }
-            */
+            
             // move particle
             this.x += this.directionX;
             this.y += this.directionY;
