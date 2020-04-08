@@ -4,28 +4,8 @@ function particles(){
         https://youtu.be/d620nV6bp0A
     */
 
-    // handle parameters
-    particles = (
-        typeof particles !== 'undefined'
-        && Number.isFinite(particles)
-        ) ? particles : 1;
-    sizeMultiplier = (
-        typeof sizeMultiplier !== 'undefined'
-        && Number.isFinite(sizeMultiplier)
-        ) ? sizeMultiplier : 3;
-    speed = (
-        typeof speed !== 'undefined'
-        && Number.isFinite(speed)
-        && (1 <= speed && speed <= 1000)
-        ) ? (speed / 100) : 50;
-    avoidMouse = (
-        typeof avoidMouse !== 'undefined'
-        && typeof avoidMouse === 'boolean'
-        ) ? avoidMouse : true;
-    hover = (
-        typeof hover !== 'undefined'
-        && typeof hover === 'boolean'
-        ) ? hover : true;
+    // check parameters and use defaults as necessary
+    checkParams();
 
     // read css colour variables from root element
     const particleColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle');
@@ -192,4 +172,61 @@ function particles(){
 
     init();
     animate();
+
+    function checkParams(){
+        if (typeof numParticles == 'undefined'){
+            numParticles = 1;
+        }
+        else if (Number.isInteger(particles)){
+            numParticles;
+        }
+        else{
+            numParticles = 1;
+            console.log("'particles' must be an integer value. Using default of '1'");
+        };
+
+        if (typeof sizeMultiplier == 'undefined'){
+            sizeMultiplier = 3;
+        }
+        else if (Number.isFinite(sizeMultiplier)){
+            sizeMultiplier;
+        }
+        else{
+            sizeMultiplier = 3;
+            console.log("'sizeMultiplier' must be a finite number. Using default of '3'");
+        };
+
+        if (typeof speed == 'undefined'){
+            speed = 50;
+        }
+        if (Number.isInteger(speed) && (1 <= speed && speed <= 1000)){
+            speed;
+        }
+        else{
+            speed = 50;
+            console.log("'speed' must be an integer between 1-1000. Using default of '50'");
+        };
+
+        if (typeof avoidMouse == 'undefined'){
+            avoidMouse = true;
+        }
+        else if (typeof avoidMouse === 'boolean'){
+            avoidMouse;
+        }
+        else{
+            avoidMouse = true;
+            console.log("'avoidMouse' must either 'true' or 'false'. Using default of 'true'");
+        }
+
+        if (typeof hover == 'undefined'){
+            hover = true;
+        }
+        else if (typeof hover === 'boolean'){
+            hover;
+        }
+        else{
+            hover = true;
+            console.log("'hover' must either 'true' or 'false'. Using default of 'true'");
+        }
+    }
 }
