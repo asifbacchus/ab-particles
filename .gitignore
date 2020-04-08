@@ -1,0 +1,14 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/numbered-bookmarks.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# compiled CSS
+css-review
+css
