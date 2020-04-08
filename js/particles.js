@@ -1,20 +1,40 @@
-function particles(avoidMouse = true, hover = true, particles = 2, speed = 50){
+function particles(){
     /* create particles animation
         based on the amazing tutorial by 'Franks Labratory'
         https://youtu.be/d620nV6bp0A
     */
 
-    const canvas = document.getElementById('particles');
-    const canvasContext = canvas.getContext('2d');
-
-    // divide the speed parameter by 100
-    speed = (speed / 100);
+    // handle parameters
+    particles = (
+        typeof particles !== 'undefined'
+        && Number.isFinite(particles)
+        ) ? particles : 1;
+    sizeMultiplier = (
+        typeof sizeMultiplier !== 'undefined'
+        && Number.isFinite(sizeMultiplier)
+        ) ? sizeMultiplier : 3;
+    speed = (
+        typeof speed !== 'undefined'
+        && Number.isFinite(speed)
+        && (1 <= speed && speed <= 1000)
+        ) ? (speed / 100) : 0.5;
+    avoidMouse = (
+        typeof avoidMouse !== 'undefined'
+        && typeof avoidMouse === 'boolean'
+        ) ? avoidMouse : true;
+    hover = (
+        typeof hover !== 'undefined'
+        && typeof hover === 'boolean'
+        ) ? hover : true;
 
     // read css colour variables from root element
     const particleColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle');
     const strokeColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke');
     const strokeHoverColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle-stroke-hover');
 
+    // get canvas element, set context and size
+    const canvas = document.getElementById('particles');
+    const canvasContext = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -95,7 +115,7 @@ function particles(avoidMouse = true, hover = true, particles = 2, speed = 50){
         particlesArray = [];
         let numberOfParticles = (canvas.height * canvas.width) / 9000;
         for (let i = 0; i < numberOfParticles * particles; i++){
-            let size = (Math.random() * 5) + 1;
+            let size = (Math.random() * sizeMultiplier) + 1;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
             let directionX = (Math.random() * 5) - 2.5;
@@ -112,7 +132,7 @@ function particles(avoidMouse = true, hover = true, particles = 2, speed = 50){
         for (let a = 0; a < particlesArray.length; a++){
             for (let b = a; b < particlesArray.length; b++){
                 let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                if (distance < (canvas.width / 7) * (canvas.height / 7)){
+                if (distance < (canvas.width / 10) * (canvas.height / 10)){
                     opacityValue = 1 - (distance / 20000);
                     // change colour on 'hover' if hover = true (default)
                     if(hover){
