@@ -1,4 +1,4 @@
-function particles(avoidMouse = true) {
+function particles(avoidMouse = true, hover = true) {
     /* create particles animation
         based on the amazing tutorial by 'Franks Labratory'
         https://youtu.be/d620nV6bp0A
@@ -77,7 +77,7 @@ function particles(avoidMouse = true) {
                     }
                 }
             }
-            
+
             // move particle
             this.x += this.directionX;
             this.y += this.directionY;
@@ -111,13 +111,21 @@ function particles(avoidMouse = true) {
                 let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                 if (distance < (canvas.width / 7) * (canvas.height / 7)){
                     opacityValue = 1 - (distance / 20000);
-                    // if the mouse is close to particles, change the line colour
-                    let dx = mousePosition.x - particlesArray[a].x;
-                    let dy = mousePosition.y - particlesArray[a].y;
-                    let mouseDistance = Math.sqrt((dx * dx) + (dy * dy));
-                    if (mouseDistance < 200) {
-                        canvasContext.globalAlpha = opacityValue;
-                        canvasContext.strokeStyle = strokeHoverColour;
+                    // change colour on 'hover' if hover = true (default)
+                    if(hover){
+                        let dx = mousePosition.x - particlesArray[a].x;
+                        let dy = mousePosition.y - particlesArray[a].y;
+                        let mouseDistance = Math.sqrt((dx * dx) + (dy * dy));
+                        if (mouseDistance < 200) {
+                            // change colour if mouse is close
+                            canvasContext.globalAlpha = opacityValue;
+                            canvasContext.strokeStyle = strokeHoverColour;
+                        }
+                        else {
+                            // use regular stroke colour
+                            canvasContext.globalAlpha = opacityValue;
+                            canvasContext.strokeStyle = strokeColour;
+                        }
                     }
                     else {
                         canvasContext.globalAlpha = opacityValue;
