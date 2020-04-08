@@ -213,14 +213,14 @@ function particles(){
         }
 
         if (typeof connectionDensity == 'undefined'){
-            connectionDensity = 7;
+            connectionDensity = (1 / 15) * 100;
         }
         else if (Number.isFinite(connectionDensity) && connectionDensity > 1){
-            connectionDensity;
+            connectionDensity = (1 / connectionDensity) * 100;
         }
         else{
-            connectionDensity = 7;
-            console.log("'connectionDensity' must be a finite number greater than 1. Using default of '7'");
+            connectionDensity = (1 / 15) * 100;
+            console.log("'connectionDensity' must be a finite number greater than 1. Using default of '15'");
         }
 
         if (typeof speed == 'undefined'){
