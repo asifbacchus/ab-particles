@@ -3,7 +3,7 @@
     https://youtu.be/d620nV6bp0A
 */
 
-const canvas = document.getElementById('canvas1');
+const canvas = document.getElementById('particles');
 const canvasContext = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
