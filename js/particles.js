@@ -1,4 +1,4 @@
-function particles(avoidMouse = true, hover = true, particles = 2, speed = 0.5){
+function particles(avoidMouse = true, hover = true, particles = 2, speed = 50){
     /* create particles animation
         based on the amazing tutorial by 'Franks Labratory'
         https://youtu.be/d620nV6bp0A
@@ -6,6 +6,9 @@ function particles(avoidMouse = true, hover = true, particles = 2, speed = 0.5){
 
     const canvas = document.getElementById('particles');
     const canvasContext = canvas.getContext('2d');
+
+    // divide the speed parameter by 100
+    speed = (speed / 100);
 
     // read css colour variables from root element
     const particleColour = getComputedStyle(document.documentElement).getPropertyValue('--col-particle');
