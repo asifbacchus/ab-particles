@@ -1,4 +1,4 @@
-function particles(avoidMouse = true, hover = true, particles = 2) {
+function particles(avoidMouse = true, hover = true, particles = 2, speed = 0.5){
     /* create particles animation
         based on the amazing tutorial by 'Franks Labratory'
         https://youtu.be/d620nV6bp0A
@@ -79,8 +79,8 @@ function particles(avoidMouse = true, hover = true, particles = 2) {
             }
 
             // move particle
-            this.x += this.directionX;
-            this.y += this.directionY;
+            this.x += this.directionX * speed;
+            this.y += this.directionY * speed;
 
             // draw particle
             this.draw();
