@@ -20,7 +20,7 @@ function particles(){
     canvas.height = window.innerHeight;
 
     let particlesArray;
-    speed = speed / 100;    // index speed to base 100 = 1
+    speed = (speed !== 0) ? (speed / 100) : 0; // index speed to base 100 = 1
 
     // get mouse position
     let mousePosition ={
@@ -84,8 +84,10 @@ function particles(){
             }
 
             // move particle
-            this.x += this.directionX * speed;
-            this.y += this.directionY * speed;
+            if (speed !== 0) {
+                this.x += this.directionX * speed;
+                this.y += this.directionY * speed;
+            }
 
             // draw particle
             this.draw();
@@ -224,7 +226,7 @@ function particles(){
         if (typeof speed == 'undefined'){
             speed = 50;
         }
-        if (Number.isInteger(speed) && (1 <= speed && speed <= 1000)){
+        if (Number.isInteger(speed) && (0 <= speed && speed <= 1000)){
             speed;
         }
         else{
