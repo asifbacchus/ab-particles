@@ -1,4 +1,4 @@
-function particles(avoidMouse = true, hover = true) {
+function particles(avoidMouse = true, hover = true, particles = 2) {
     /* create particles animation
         based on the amazing tutorial by 'Franks Labratory'
         https://youtu.be/d620nV6bp0A
@@ -91,7 +91,7 @@ function particles(avoidMouse = true, hover = true) {
     function init(){
         particlesArray = [];
         let numberOfParticles = (canvas.height * canvas.width) / 9000;
-        for (let i = 0; i < numberOfParticles * 2; i++){
+        for (let i = 0; i < numberOfParticles * particles; i++){
             let size = (Math.random() * 5) + 1;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
