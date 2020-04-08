@@ -6,6 +6,26 @@ import partials
 @import 'reset';
 @import 'palette';
 
+body {
+    color: var(--col-text);
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+    margin-bottom: 3rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
 #particles {
     position: fixed;
     top: 0;
@@ -13,4 +33,5 @@ import partials
     width: 100%;
     height: 100%;
     background: var(--col-bg-canvas);
+    z-index: -999;
 }
