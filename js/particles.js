@@ -182,12 +182,12 @@ function particles(){
         if (typeof numParticles == 'undefined'){
             numParticles = 1;
         }
-        else if (Number.isInteger(particles)){
+        else if (Number.isFinite(numParticles)){
             numParticles;
         }
         else{
             numParticles = 1;
-            console.log("'particles' must be an integer value. Using default of '1'");
+            console.log("'numParticles' must be a finite number. Using default of '1'");
         };
 
         if (typeof sizeMultiplier == 'undefined'){
