@@ -216,7 +216,7 @@ function particles(){
         }
         else{
             avoidMouse = true;
-            console.log("'avoidMouse' must either 'true' or 'false'. Using default of 'true'");
+            console.log("'avoidMouse' must be either 'true' or 'false'. Using default of 'true'");
         }
 
         if (typeof hover == 'undefined'){
@@ -227,7 +227,7 @@ function particles(){
         }
         else{
             hover = true;
-            console.log("'hover' must either 'true' or 'false'. Using default of 'true'");
+            console.log("'hover' must be either 'true' or 'false'. Using default of 'true'");
         }
     }
 
