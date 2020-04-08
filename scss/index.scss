@@ -4,6 +4,7 @@
 import partials
 */
 @import 'reset';
+@import 'palette';
 
 #particles {
     position: fixed;
@@ -11,5 +12,5 @@ import partials
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(#ffc38c, #ff9b40);
+    background: var(--col-bg-canvas);
 }
