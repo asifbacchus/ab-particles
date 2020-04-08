@@ -102,7 +102,16 @@ function connect(){
             let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
             if (distance < (canvas.width / 7) * (canvas.height / 7)){
                 opacityValue = 1 - (distance / 20000);
-                canvasContext.strokeStyle = `rgba(140, 85, 31, ${opacityValue})`;
+                // if the mouse is close to particles, change the line colour
+                let dx = mousePosition.x - particlesArray[a].x;
+                let dy = mousePosition.y - particlesArray[a].y;
+                let mouseDistance = Math.sqrt((dx * dx) + (dy * dy));
+                if (mouseDistance < 200) {
+                    canvasContext.strokeStyle = `rgba(60, 40, 15, ${opacityValue})`;
+                }
+                else {
+                    canvasContext.strokeStyle = `rgba(140, 85, 31, ${opacityValue})`;
+                }
                 canvasContext.lineWidth = 1;
                 canvasContext.beginPath();
                 canvasContext.moveTo(particlesArray[a].x, particlesArray[a].y);
