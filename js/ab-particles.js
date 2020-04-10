@@ -41,13 +41,12 @@ function particles(){
 
     // create particle class
     class Particle{
-        constructor(x, y, directionX, directionY, size, colour) {
+        constructor(x, y, directionX, directionY, size) {
             this.x = x;
             this.y = y;
             this.directionX = directionX;
             this.directionY = directionY;
             this.size = size;
-            this.colour = colour;
         }
         // method to draw individual particles
         draw(){
@@ -148,9 +147,8 @@ function particles(){
             else{
                 directionY = (Math.random() * 5) - 2.5;
             }
-            let colour = '#8c5523';
 
-            particlesArray.push(new Particle(x, y, directionX, directionY, size, colour));
+            particlesArray.push(new Particle(x, y, directionX, directionY, size));
         }
     }
 
