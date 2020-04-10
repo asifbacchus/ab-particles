@@ -98,9 +98,11 @@ sizeMultiplier|Random multiplier between 0 and this number that is applied to va
 width|Stroke width (px) of connector lines.|integer|1
 connections|Whether or not to connect the particles to each other when they get close enough.|boolean|true
 connectionDensity|How densely particles connect to each other.<br/>**Careful not to set this number too high or you can crash the browser!**|finite number > 1|15
+noBounceH|Particles do not bounce off the left or right sides of the window.|boolean|false
+noBounceV|Particles do not bounce off the top or bottom of the window.|boolean|false
 speed|How quickly the particles bounce around the window|1 < integer < 1000|50
-hSpeed|How quickly the particles move horizontally. Positive values move to the right, negative to the left. This overrides the value of 'speed'.|-1000 < integer < 1000|1
-vSpeed|How quickly the particles move vertically. Positive values move down, negative move up. This overrides the value of 'speed'.|-1000 < integer < 1000|1
+speedH|How quickly the particles move horizontally. Positive values move to the right, negative to the left. This overrides the value of 'speed'.|-1000 < integer < 1000|1
+speedV|How quickly the particles move vertically. Positive values move down, negative move up. This overrides the value of 'speed'.|-1000 < integer < 1000|1
 avoidMouse|Should particles be repelled away from the mouse?|boolean|true
 hover|Should connection lines change colours when the mouse is near them?|boolean|true
 
