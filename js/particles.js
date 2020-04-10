@@ -138,7 +138,7 @@ function particles(){
                         canvasContext.globalAlpha = opacityValue;
                         canvasContext.strokeStyle = strokeColour;
                     }
-                    canvasContext.lineWidth = 1;
+                    canvasContext.lineWidth = width;
                     canvasContext.beginPath();
                     canvasContext.moveTo(particlesArray[a].x, particlesArray[a].y);
                     canvasContext.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -199,6 +199,17 @@ function particles(){
         else{
             sizeMultiplier = 5;
             console.log("'sizeMultiplier' must be a finite number. Using default of '5'.");
+        };
+
+        if (typeof width == 'undefined'){
+            width = 1;
+        }
+        else if (Number.isInteger(width) && width > 0){
+            width;
+        }
+        else{
+            width = 1;
+            console.log("'width' must be an integer number of pixels greater than 0. Using default of '1'.");
         };
 
         if (typeof connections == 'undefined'){
