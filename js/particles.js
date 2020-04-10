@@ -191,14 +191,14 @@ function particles(){
         };
 
         if (typeof sizeMultiplier == 'undefined'){
-            sizeMultiplier = 3;
+            sizeMultiplier = 5;
         }
         else if (Number.isFinite(sizeMultiplier)){
             sizeMultiplier;
         }
         else{
-            sizeMultiplier = 3;
-            console.log("'sizeMultiplier' must be a finite number. Using default of '3'.");
+            sizeMultiplier = 5;
+            console.log("'sizeMultiplier' must be a finite number. Using default of '5'.");
         };
 
         if (typeof connections == 'undefined'){
