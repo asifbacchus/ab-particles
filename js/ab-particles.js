@@ -1,6 +1,6 @@
 function particles(){
     /* particles animation
-        based on the amazing tutorial by 'Franks Laboratory'
+        inspired by the amazing tutorial by 'Franks Laboratory'
         https://youtu.be/d620nV6bp0A
     */
 
