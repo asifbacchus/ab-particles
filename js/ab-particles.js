@@ -58,12 +58,38 @@ function particles(){
         }
         // check particle position, mouse position, move particle and draw it
         update(){
-            // check if particle is still within canvas
-            if (this.x > canvas.width || this.x < 0){
-                this.directionX = -this.directionX;
+            // check if particle.x is still within canvas
+            if (vSpeed === 0 && hSpeed > 0){
+                if (this.x > canvas.width){
+                    this.x = 0;
+                }
             }
-            if (this.y > canvas.height || this.y < 0){
-                this.directionY = -this.directionY;
+            else if (vSpeed === 0 && hSpeed < 0){
+                if (this.x < 0){
+                    this.x = canvas.width;
+                }
+            }
+            else{
+                if (this.x > canvas.width || this.x < 0){
+                    this.directionX = -this.directionX;
+                }
+            }
+
+            // check if particle.y is still within canvas
+            if (hSpeed === 0 && vSpeed > 0){
+                if (this.y > canvas.height) {
+                    this.y = 0;
+                }
+            }
+            else if (hSpeed === 0 && vSpeed < 0){
+                if (this.y < 0){
+                    this.y = canvas.height;
+                }
+            }
+            else{
+                if (this.y > canvas.height || this.y < 0){
+                    this.directionY = -this.directionY;
+                }
             }
 
             // avoid the mouse if avoidMouse = true (default)
@@ -89,8 +115,8 @@ function particles(){
 
             // move particle
             if (speed !== 0) {
-                this.x += this.directionX * speed;
-                this.y += this.directionY * speed;
+                this.x += this.directionX * speed * hSpeed;
+                this.y += this.directionY * speed * vSpeed;
             }
 
             // draw particle
@@ -106,8 +132,22 @@ function particles(){
             let size = (Math.random() * sizeMultiplier) + 1;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-            let directionX = (Math.random() * 5) - 2.5;
-            let directionY = (Math.random() * 5) - 2.5;
+            // set directionX
+            let directionX = 0
+            if (vSpeed === 0){
+                directionX = (Math.random() * 5);
+            }
+            else {
+                directionX = (Math.random() * 5) - 2.5;
+            }
+            // set directionY
+            let directionY = 0;
+            if (hSpeed === 0){
+                directionY = (Math.random() * 5);
+            }
+            else{
+                directionY = (Math.random() * 5) - 2.5;
+            }
             let colour = '#8c5523';
 
             particlesArray.push(new Particle(x, y, directionX, directionY, size, colour));
@@ -258,6 +298,30 @@ function particles(){
         else{
             speed = 50;
             console.log("'speed' must be an integer between 1-1000. Using default of '50'.");
+        };
+
+        if (typeof hSpeed == 'undefined'){
+            hSpeed = 1;
+        }
+        else if (Number.isInteger(hSpeed) && (-1000 <= hSpeed && hSpeed <= 1000)){
+            hSpeed;
+            speed = 1;
+        }
+        else{
+            hSpeed = 1;
+            console.log("'hSpeed' must be an integer between -1000 and 1000. Using default of '1'.");
+        };
+
+        if (typeof vSpeed == 'undefined'){
+            vSpeed = 1;
+        }
+        else if (Number.isInteger(vSpeed) && (-1000 <= vSpeed && vSpeed <= 1000)){
+            vSpeed;
+            speed = 1;
+        }
+        else{
+            vSpeed = 1;
+            console.log("'vSpeed' must be an integer between -1000 and 1000. Using default of '1'.");
         };
 
         if (typeof avoidMouse == 'undefined'){
