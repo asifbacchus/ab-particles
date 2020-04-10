@@ -192,6 +192,10 @@ Again, I recommend using *load* instead of something like *DOMContentLoaded* sin
 - *numParticles* is a multiplier. The script takes 1% of the window width and sets that as the number of particles it will generate multiplied by the value of *numParticles*. It is because this is a multiplier that you need to be careful about setting high values!
 - I don't really like most of the popular animations such as clicking to add more particles or 'grabbing' particles on hover/click. As such, I have not implemented these animations. Let me know if this is something you want!
 
+## License and usage
+
+You are free to use this script for anything or in any way you want including modifying it to suit your needs. While not necessary, I'd love if you put an attribution on your site if you use it and/or link back to this repo either on the page or at least in your HTML with a comment. Most important, if you improve the code, PLEASE contribute it back in this repo via a pull request or an issue or something. Thanks!
+
 ## Final thoughts
 
 I put this together pretty quickly to generate a less boring background for a login page I was working on. As such, I didn't really add many bells and whistles. I wanted to keep it pretty lean and focussed. Also, this is one of the first javascript projects I've decided to 'release into the wild' for others to use. So, I'd love any feedback, suggestions and improvements you have to offer! I'm a horrid programmer so don't worry, I won't be offended by any criticism and look forward to maybe learning a few things from your suggestions!
