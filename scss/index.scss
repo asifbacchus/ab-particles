@@ -8,6 +8,7 @@ import partials
 
 body {
     color: var(--col-text);
+    background-color: var(--col-bg);
 }
 
 h1 {
@@ -32,6 +33,5 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--col-bg-canvas);
     z-index: -999;
 }
