@@ -1,6 +1,24 @@
 # ab-particles: vanilla javascript particle animation
 
 Very simple, lightweight animated particles display that **does not** require any external files whatsoever. No libraries, configuration JSON or anything. This is a stripped-down version of the famous <a href="https://vincentgarreau.com/particles.js" target="_blank">'js-particles' by Vincent Garreau</a> and the code was inspired by an amazing tutorial by <a href="https://youtu.be/d620nV6bp0A" target="_blank">Franks Laboratory</a>.
+- [Features](#features)
+- [Usage (simple)](#usage-simple)
+- [CSS customizations (colours)](#css-customizations-colours)
+- [Setting feature parameters](#setting-feature-parameters)
+- [Examples](#examples)
+  - [default settings (explicit)](#default-settings-explicit)
+  - [starry night](#starry-night)
+  - [snow](#snow)
+  - [bubbles](#bubbles)
+  - [warp speed to the right](#warp-speed-to-the-right)
+  - [warp speed to the left](#warp-speed-to-the-left)
+  - [my usual settings (nice background effect)](#my-usual-settings-nice-background-effect)
+- [Advanced loading](#advanced-loading)
+  - [Sub-resource Integrity (SRI)](#sub-resource-integrity-sri)
+  - [addEventListener](#addeventlistener)
+- [Notes](#notes)
+- [License and usage](#license-and-usage)
+- [Final thoughts](#final-thoughts)
 
 ## Features
 
