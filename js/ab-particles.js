@@ -101,7 +101,6 @@ function particles(){
     // create particle array
     function init(){
         particlesArray = [];
-        //let numberOfParticles = (canvas.height * canvas.width) / 9000;
         let numberOfParticles = canvas.width * 0.01;
         for (let i = 0; i < numberOfParticles * numParticles; i++){
             let size = (Math.random() * sizeMultiplier) + 1;
@@ -253,7 +252,7 @@ function particles(){
         if (typeof speed == 'undefined'){
             speed = 50;
         }
-        if (Number.isInteger(speed) && (0 <= speed && speed <= 1000)){
+        else if (Number.isInteger(speed) && (0 <= speed && speed <= 1000)){
             speed;
         }
         else{
