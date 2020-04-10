@@ -1,6 +1,6 @@
 # ab-particles: vanilla javascript particle animation
 
-Very simple, lightweight animated particles display that **does not** require any external files whatsoever. No libraries, configuration JSON or anything. This is a stripped-down version of the famous ['js-particles' by Vincent Garreau](https://vincentgarreau.com/particles.js) and the code was inspired by an amazing tutorial by [Franks Laboratory](https://youtu.be/d620nV6bp0A).
+Very simple, lightweight animated particles display that **does not** require any external files whatsoever. No libraries, configuration JSON or anything. This is a stripped-down version of the famous <a href="https://vincentgarreau.com/particles.js" target="_blank">'js-particles' by Vincent Garreau</a> and the code was inspired by an amazing tutorial by <a href="https://youtu.be/d620nV6bp0A" target="_blank">Franks Laboratory</a>.
 
 ## Features
 
@@ -110,7 +110,7 @@ hover|Should connection lines change colours when the mouse is near them?|boolea
 
 ### default settings (explicit)
 
-Random balanced horizontal and vertical motion bouncing off the edges of the window. Particles are repelled by the mouse and connections are highlighted on hover. [Sample](https://asifbacchus.app/public/samples/ab-particles/defaults.html)
+Random balanced horizontal and vertical motion bouncing off the edges of the window. Particles are repelled by the mouse and connections are highlighted on hover. <a href="https://asifbacchus.app/public/samples/ab-particles/defaults.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(opacity=100, numParticles=10, sizeMultiplier=5, width=1, connections=true, connectionDensity=15, noBounceH=false, noBounceV=false, speed=50, avoidMouse=true, hover=true)'>
@@ -118,7 +118,7 @@ Random balanced horizontal and vertical motion bouncing off the edges of the win
 
 ### starry night
 
-Freeze the display, remove connections, disable mouse interaction. Creates a random assortment of particles that will change on each reload. [Sample](https://asifbacchus.app/public/samples/ab-particles/starrynight.html)
+Freeze the display, remove connections, disable mouse interaction. Creates a random assortment of particles that will change on each reload. <a href="https://asifbacchus.app/public/samples/ab-particles/starrynight.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(speed=0, connections=false, avoidMouse=false, hover=false)'>
@@ -126,7 +126,7 @@ Freeze the display, remove connections, disable mouse interaction. Creates a ran
 
 ### snow
 
-No horizontal movement, connections or mouse interaction. Particles fall straight down, so no vertical bounce. [Sample](https://asifbacchus.app/public/samples/ab-particles/snow.html)
+No horizontal movement, connections or mouse interaction. Particles fall straight down, so no vertical bounce. <a href="https://asifbacchus.app/public/samples/ab-particles/snow.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(noBounceV=true, speedV=100, connections=false, avoidMouse=false, hover=false)'>
@@ -134,7 +134,7 @@ No horizontal movement, connections or mouse interaction. Particles fall straigh
 
 ### bubbles
 
-Opposite of snow, looks a little like bubbles. No vertical bounce and negative vertical speed. Added a little horizontal speed for effect and to show off 'skew'. [Sample](https://asifbacchus.app/public/samples/ab-particles/bubbles.html)
+Opposite of snow, looks a little like bubbles. No vertical bounce and negative vertical speed. Added a little horizontal speed for effect and to show off 'skew'. <a href="https://asifbacchus.app/public/samples/ab-particles/bubbles.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(noBounceV=true, speedV=-100, speedH=-15,connections=false, avoidMouse=false, hover=false)'>
@@ -142,7 +142,7 @@ Opposite of snow, looks a little like bubbles. No vertical bounce and negative v
 
 ### warp speed to the right
 
-Moving right would make the particles go left, therefore negative movement. No horizontal bounce. We don't want connections or mouse interaction here either. [Sample](https://asifbacchus.app/public/samples/ab-particles/warpright.html)
+Moving right would make the particles go left, therefore negative movement. No horizontal bounce. We don't want connections or mouse interaction here either. <a href="https://asifbacchus.app/public/samples/ab-particles/warpright.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(noBounceH=true, speedH=-100, connections=false, avoidMouse=false, hover=false)'>
@@ -150,7 +150,7 @@ Moving right would make the particles go left, therefore negative movement. No h
 
 ### warp speed to the left
 
-Moving left would make the particles go right, therefore positive movement. No horizontal bounce. We don't want connections or mouse interaction here either. Added a little positive vertical speed to show off skew. [Sample](https://asifbacchus.app/public/samples/ab-particles/warpleft.html)
+Moving left would make the particles go right, therefore positive movement. No horizontal bounce. We don't want connections or mouse interaction here either. Added a little positive vertical speed to show off skew. <a href="https://asifbacchus.app/public/samples/ab-particles/warpleft.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(noBounceH=true, speedH=100, speedV=15, connections=false, avoidMouse=false, hover=false)'>
@@ -158,7 +158,7 @@ Moving left would make the particles go right, therefore positive movement. No h
 
 ### my usual settings (nice background effect)
 
-I use this for screens where I can't figure out a meaningful background, so why not generate something nice to look at? Toning down the opacity a little to not distract from the text. [Sample](https://asifbacchus.app/public/samples/ab-particles/index.html)
+I use this for screens where I can't figure out a meaningful background, so why not generate something nice to look at? Toning down the opacity a little to not distract from the text. <a href="https://asifbacchus.app/public/samples/ab-particles/index.html" target="_blank">[Sample]</a>
 
 ```html
 <body onload='particles(speed=15, avoidMouse=false, opacity=65)'>
