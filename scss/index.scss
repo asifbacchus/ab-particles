@@ -21,6 +21,15 @@ p {
     margin-bottom: 1.5rem;
 }
 
+a {
+    color: inherit;
+    &:hover,
+    &:focus,
+    &:active {
+        color: red;
+    }
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
