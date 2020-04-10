@@ -21,6 +21,10 @@ function particles(){
 
     let particlesArray;
     speed = (speed !== 0) ? (speed / 100) : 0; // index speed to base 100 = 1
+    opacity = opacity / 100;
+
+    // set overall canvas opacity
+    canvas.style.opacity = opacity;
 
     // get mouse position
     let mousePosition ={
@@ -179,6 +183,17 @@ function particles(){
     animate();
 
     function checkParams(){
+        if (typeof opacity == 'undefined'){
+            opacity = 100;
+        }
+        else if (Number.isFinite(opacity) && (0 <= opacity && opacity <= 100)){
+            opacity;
+        }
+        else{
+            opacity = 100;
+            console.log("'opacity' must be a finite number between 0 and 100. Using default of '100'.");
+        };
+
         if (typeof numParticles == 'undefined'){
             numParticles = 1;
         }
