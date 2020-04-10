@@ -111,7 +111,7 @@ hover|Should connection lines change colours when the mouse is near them?|boolea
 Random balanced horizontal and vertical motion bouncing off the edges of the window. Particles are repelled by the mouse and connections are highlighted on hover. [Sample](defaults.html)
 
 ```html
-<body onload='particles(opacity=100, numParticles=10, sizeMultiplier=5, width=1, connections=true, connectionDensity=15, speed=50, avoidMouse=true, hover=true)'>
+<body onload='particles(opacity=100, numParticles=10, sizeMultiplier=5, width=1, connections=true, connectionDensity=15, noBounceH=false, noBounceV=false, speed=50, avoidMouse=true, hover=true)'>
 ```
 
 ### starry night
@@ -124,42 +124,42 @@ Freeze the display, remove connections, disable mouse interaction. Creates a ran
 
 ### snow
 
-No horizontal movement, connections or mouse interaction. Particles fall straight down. [Sample](snow.html)
+No horizontal movement, connections or mouse interaction. Particles fall straight down, so no vertical bounce. [Sample](snow.html)
 
 ```html
-<body onload='particles(hSpeed=0, vSpeed=100, connections=false, avoidMouse=false, hover=false)'>
+<body onload='particles(noBounceV=true, speedV=100, connections=false, avoidMouse=false, hover=false)'>
 ```
 
 ### bubbles
 
-Opposite of snow, looks a little like bubbles. [Sample](bubbles.html)
+Opposite of snow, looks a little like bubbles. No vertical bounce and negative vertical speed. Added a little horizontal speed for effect and to show off 'skew'. [Sample](bubbles.html)
 
 ```html
-<body onload='particles(hSpeed=0, vSpeed=-100, connections=false, avoidMouse=false, hover=false)'>
+<body onload='particles(noBounceV=true, speedV=-100, speedH=-15,connections=false, avoidMouse=false, hover=false)'>
 ```
 
 ### warp speed to the right
 
-Moving right would make the particles go left, therefore negative movement. We don't want connections or mouse interaction here either. [Sample](warpright.html)
+Moving right would make the particles go left, therefore negative movement. No horizontal bounce. We don't want connections or mouse interaction here either. [Sample](warpright.html)
 
 ```html
-<body onload='particles(vSpeed=0, hSpeed=-100, connections=false, avoidMouse=false, hover=false)'>
+<body onload='particles(noBounceH=true, speedH=-100, connections=false, avoidMouse=false, hover=false)'>
 ```
 
 ### warp speed to the left
 
-Moving left would make the particles go right, therefore positive movement. We don't want connections or mouse interaction here either. [Sample](warpleft.html)
+Moving left would make the particles go right, therefore positive movement. No horizontal bounce. We don't want connections or mouse interaction here either. Added a little positive vertical speed to show off skew. [Sample](warpleft.html)
 
 ```html
-<body onload='particles(vSpeed=0, hSpeed=100, connections=false, avoidMouse=false, hover=false)'>
+<body onload='particles(noBounceH=true, speedH=100, speedV=15, connections=false, avoidMouse=false, hover=false)'>
 ```
 
 ### my usual settings (nice background effect)
 
-I use this for screens where I can't figure out a meaningful background, so why not generate something nice to look at?  [Sample](index.html)
+I use this for screens where I can't figure out a meaningful background, so why not generate something nice to look at? Toning down the opacity a little to not distract from the text. [Sample](index.html)
 
 ```html
-<body onload='particles(speed=15, avoidMouse=false)'>
+<body onload='particles(speed=15, avoidMouse=false, opacity=65)'>
 ```
 
 ## Advanced loading

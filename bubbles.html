@@ -5,21 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>animated particles</title>
     <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat&display=block"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
         href="css/index.min.css"
-        crossorigin="anonymous"/>
+        integrity="sha384-6N5QXFiNi0Dxhi0OdN6AGW3PKtsxYeAxsVhf5lNgxx6F6KO08DBr5IhVMrc3rmov"
+        crossorigin="anonymous">
 </head>
-<body onload='particles(hSpeed=0, vSpeed=-100, connections=false, avoidMouse=false, hover=false)'>
+<body onload='particles(noBounceV=true, speedV=-100, speedH=-15,connections=false, avoidMouse=false, hover=false)'>
     <div class="wrapper">
-        <h1>Lorem ipsum dolor sit amet.</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut delectus quibusdam est rem sequi consectetur doloremque. Laborum suscipit, incidunt excepturi veniam rerum quis accusamus eaque, obcaecati modi doloremque eveniet ratione!</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat quod, ut aliquid doloremque impedit debitis similique dicta perferendis nam iusto consequuntur obcaecati nemo, <a href="#">perspiciatis nobis ipsum</a> nostrum eos quasi est quidem reiciendis ducimus beatae repudiandae. Facere mollitia incidunt recusandae, voluptatem ullam placeat fugiat autem nihil. Hic quia accusantium nesciunt dicta.</p>
+        <div class="spacer"></div>
+        <header>
+            <h1>ab-particles</h1>
+            <h2>simple, lightweight vanilla-javascript particle animation</h2>
+        </header>
+        <main>
+            <p>This is a sample page showing off some settings of this tiny (5kb!) script. No external libraries, no external configuration files, no jQuery. Just javascript and easy colour styling via CSS variables.</p>
+            <p>Configuration details, download and source at <a href="http://git.asifbacchus.app/asif/ab-particles.git">my git repo</a>.</p>
+            <p>Thanks for checking it out!</p>
+        </main>
+        <div class="spacer"></div>
+        <footer>
+            <p>Design, code and content appearing on this site is developed by
+            <a href="https://asifbacchus.com">Asif Bacchus</a> ('author') and
+            may be freely used and redistributed in accordance with the <a
+            href="https://git.asifbacchus.app/asif/ab-particles/LICENSE">license</a>
+            appearing in the <a
+            href="https://git.asifbacchus.app/asif/ab-particles.git">content
+            repo</a>. Author provides no warranties, guarantees or implications
+            of suitability and disclaims any and all responsibility arising from
+            the usage of anything appearing on or linked to this page for any
+            purpose whatsoever. Copyright 2020 Asif Bacchus. Some Rights
+            Reserved.</p>
+        </footer>
     </div>
     <canvas id="particles"></canvas>
     <!-- javascript -->
     <script
         src="js/ab-particles.min.js"
+        integrity="sha384-HI+YXFmq6RX6R45hGuCOv6U/XhbS6swme7nnQVc8g6QfhucST79WEzlK6XMbanUp"
         crossorigin="anonymous"
-        integrity="sha384-eUruDNgO8YkfdY2sU3oCkjzhJbnXXT9kac3I8DwYkh2mjE0jCIKvTgN6yvvo9SqO"
         defer>
     </script>
     <!-- end javascript -->
