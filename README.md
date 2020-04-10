@@ -16,7 +16,7 @@ Very simple, lightweight animated particles display that **does not** require an
 
 ## Usage (simple)
 
-1. Download the release file.
+1. [Download the release file](https://git.asifbacchus.app/asif/ab-particles/releases).
 2. Edit your HTML to include a canvas with *ID* 'particles'. You can put the canvas anywhere you'd like, but I'd strongly recommend putting it at the end of the *body*.
 
     ```html
@@ -53,6 +53,8 @@ Very simple, lightweight animated particles display that **does not** require an
         </script>
     </head>
     ```
+
+    > Remember to use the proper integrity checksum found in *js/integrity.sha384* and not copy the one here!
 
 5. Because the script reads CSS variables, we need to wait until CSS is fully parsed. Add an *onload* event to the *body* tag of your HTML:
 
