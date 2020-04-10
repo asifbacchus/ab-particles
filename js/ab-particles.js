@@ -101,7 +101,8 @@ function particles(){
     // create particle array
     function init(){
         particlesArray = [];
-        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        //let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        let numberOfParticles = canvas.width * 0.01;
         for (let i = 0; i < numberOfParticles * numParticles; i++){
             let size = (Math.random() * sizeMultiplier) + 1;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
@@ -195,14 +196,14 @@ function particles(){
         };
 
         if (typeof numParticles == 'undefined'){
-            numParticles = 1;
+            numParticles = 10;
         }
         else if (Number.isFinite(numParticles)){
             numParticles;
         }
         else{
-            numParticles = 1;
-            console.log("'numParticles' must be a finite number. Using default of '1'.");
+            numParticles = 10;
+            console.log("'numParticles' must be a finite number. Using default of '5'.");
         };
 
         if (typeof sizeMultiplier == 'undefined'){
