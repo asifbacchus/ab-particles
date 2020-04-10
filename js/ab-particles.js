@@ -114,7 +114,7 @@ function particles(){
         }
     }
 
-    // check if particles are close enough to connect to eachother
+    // check if particles are close enough to connect to each other
     function connect(){
         let opacityValue = 1;
         for (let a = 0; a < particlesArray.length; a++){
