@@ -131,10 +131,21 @@ function particles(){
             let size = (Math.random() * sizeMultiplier) + 1;
             // set X
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-            directionX = Math.random() * 5;
+            if (noBounceH){
+                directionX = Math.random() * 5;
+            }
+            else{
+                directionX = (Math.random() * 5) - 2.5;
+            }
             // set Y
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-            directionY = Math.random() * 5;
+            if (noBounceV){
+                directionY = Math.random() * 5;
+            }
+            else{
+                directionY = (Math.random() * 5) -2.5;
+            }
+
 
             particlesArray.push(new Particle(x, y, directionX, directionY, size));
         }
