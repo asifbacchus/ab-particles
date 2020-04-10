@@ -58,12 +58,12 @@ function particles(){
         // check particle position, mouse position, move particle and draw it
         update(){
             // check if particle.x is still within canvas
-            if (vSpeed === 0 && hSpeed > 0){
+            if (noBounceH === true && speedH > 0){
                 if (this.x > canvas.width){
                     this.x = 0;
                 }
             }
-            else if (vSpeed === 0 && hSpeed < 0){
+            else if (noBounceH === true && speedH < 0){
                 if (this.x < 0){
                     this.x = canvas.width;
                 }
@@ -75,12 +75,12 @@ function particles(){
             }
 
             // check if particle.y is still within canvas
-            if (hSpeed === 0 && vSpeed > 0){
+            if (noBounceV === true && speedV > 0){
                 if (this.y > canvas.height) {
                     this.y = 0;
                 }
             }
-            else if (hSpeed === 0 && vSpeed < 0){
+            else if (noBounceV === true && speedV < 0){
                 if (this.y < 0){
                     this.y = canvas.height;
                 }
@@ -114,8 +114,8 @@ function particles(){
 
             // move particle
             if (speed !== 0) {
-                this.x += this.directionX * speed * hSpeed;
-                this.y += this.directionY * speed * vSpeed;
+                this.x += this.directionX * speed * speedH;
+                this.y += this.directionY * speed * speedV;
             }
 
             // draw particle
@@ -129,24 +129,12 @@ function particles(){
         let numberOfParticles = canvas.width * 0.01;
         for (let i = 0; i < numberOfParticles * numParticles; i++){
             let size = (Math.random() * sizeMultiplier) + 1;
+            // set X
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+            directionX = Math.random() * 5;
+            // set Y
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-            // set directionX
-            let directionX = 0
-            if (vSpeed === 0){
-                directionX = (Math.random() * 5);
-            }
-            else {
-                directionX = (Math.random() * 5) - 2.5;
-            }
-            // set directionY
-            let directionY = 0;
-            if (hSpeed === 0){
-                directionY = (Math.random() * 5);
-            }
-            else{
-                directionY = (Math.random() * 5) - 2.5;
-            }
+            directionY = Math.random() * 5;
 
             particlesArray.push(new Particle(x, y, directionX, directionY, size));
         }
@@ -287,6 +275,28 @@ function particles(){
             console.log("'connectionDensity' must be a finite number greater than 1. Using default of '15'.");
         }
 
+        if (typeof noBounceH == 'undefined'){
+            noBounceH = false;
+        }
+        else if (typeof noBounceH === 'boolean'){
+            noBounceH;
+        }
+        else{
+            noBounceH = false;
+            console.log("'noBounceH' must be either 'true' or 'false'. Using default of 'false'.");
+        }
+
+        if (typeof noBounceV == 'undefined'){
+            noBounceV = false;
+        }
+        else if (typeof noBounceV === 'boolean'){
+            noBounceV;
+        }
+        else{
+            noBounceV = false;
+            console.log("'noBounceV' must be either 'true' or 'false'. Using default of 'false'.");
+        }
+
         if (typeof speed == 'undefined'){
             speed = 50;
         }
@@ -298,28 +308,28 @@ function particles(){
             console.log("'speed' must be an integer between 1-1000. Using default of '50'.");
         };
 
-        if (typeof hSpeed == 'undefined'){
-            hSpeed = 1;
+        if (typeof speedH == 'undefined'){
+            speedH = 1;
         }
-        else if (Number.isInteger(hSpeed) && (-1000 <= hSpeed && hSpeed <= 1000)){
-            hSpeed;
+        else if (Number.isInteger(speedH) && (-1000 <= speedH && speedH <= 1000)){
+            speedH;
             speed = 1;
         }
         else{
-            hSpeed = 1;
-            console.log("'hSpeed' must be an integer between -1000 and 1000. Using default of '1'.");
+            speedH = 1;
+            console.log("'speedH' must be an integer between -1000 and 1000. Using default of '1'.");
         };
 
-        if (typeof vSpeed == 'undefined'){
-            vSpeed = 1;
+        if (typeof speedV == 'undefined'){
+            speedV = 1;
         }
-        else if (Number.isInteger(vSpeed) && (-1000 <= vSpeed && vSpeed <= 1000)){
-            vSpeed;
+        else if (Number.isInteger(speedV) && (-1000 <= speedV && speedV <= 1000)){
+            speedV;
             speed = 1;
         }
         else{
-            vSpeed = 1;
-            console.log("'vSpeed' must be an integer between -1000 and 1000. Using default of '1'.");
+            speedV = 1;
+            console.log("'speedV' must be an integer between -1000 and 1000. Using default of '1'.");
         };
 
         if (typeof avoidMouse == 'undefined'){
